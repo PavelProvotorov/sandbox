@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <filter id="__grainNoise__">
-    <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"></feTurbulence>
-    <feColorMatrix in="turbulence" type="matrix" values="1 1 1 0 0 1 1 1 0 0 1 1 1 0 0 0 0 0 0.4 0" result="grains"></feColorMatrix>
-  </filter>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" version="1.1" viewBox="0 0 100 100" width="100" height="100" opacity="0.37">
+  <defs>
+    <filter id="nnnoise-filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" color-interpolation-filters="linearRGB">
+      <feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="4" seed="15" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"></feTurbulence>
+      <feSpecularLighting surfaceScale="17" specularConstant="1.6" specularExponent="20" lighting-color="#ffffff" x="0%" y="0%" width="100%" height="100%" in="turbulence" result="specularLighting">
+        <feDistantLight azimuth="3" elevation="83"></feDistantLight>
+      </feSpecularLighting>
+    </filter>
+  </defs>
 </svg>
